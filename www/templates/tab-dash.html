@@ -1,0 +1,85 @@
+
+<ion-view>
+  <ion-nav-title>
+      <img src="img/logo.png" height="100%" > 
+  </ion-nav-title>
+
+  <ion-content delegate-handle="mainScroll">
+    <div class="item-input-inset">
+    <a href="" ng-show="botaolimpador" class="button icon-left ion-android-cancel button-clear button-dark" ng-click="limpapesquisa()"> </a>
+      <label class="item-input-wrapper" >
+        <input type="text" placeholder="DIGITE SUA PESQUISA" ng-model="expres" style="height: 50px; border: 4px;">
+      </label>
+       
+      <a href="" class="button icon-left ion-search button-clear button-dark" ng-click="pesquisar(expres, palavras); expres = '';"> </a>
+       <div class="list" ng-show="rodape">
+        <li class="item" ng-repeat="airline in airlines | filter:expres ">{{airline.name}}</li>
+      </div> 
+
+    </div>
+      
+     <!--
+<center>
+<a href="#/tab/servicos/favoritos" class="button button-clear button-dark"><i class="icon assertive ion-android-favorite">  </i>  MEUS FAVORITOS </a>
+ </center>
+   -->
+ <Br>
+ <center>
+<a href="#/tab/servicos/favoritos">
+  <img src="img/banner-promocao.png" width="90%">
+ </a>
+
+</center>
+<ion-list>
+      <ion-item 
+              class="item-icon-right item-text-wrap" 
+              ng-repeat="nome in nomes track by getTracker()  |  orderBy:['posicao','strNome']"  
+              type="item-text-wrap" 
+              href="#/tab/dash/{{nome.id}}*{{nome.strNome}}*{{nome.strTelefone1}}*{{nome.strTelefone2}}*{{nome.strTelefone3}}*{{nome.strEndereco}}*{{nome.pic}}"> 
+        <img ng-if="nome.bitAtivo == 3" ng-src="img/banners/{{nome.pic}}" width="135%" style="margin-left: -10%;">
+        <h2><b ng-if="nome.bitAtivo == 2">{{nome.strNome}}</b></h2>
+        <h2 ng-if="nome.bitAtivo == 1">{{nome.strNome}}</h2>
+        <p  ng-if="nome.bitAtivo == 1">{{nome.strTelefone1}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+</ion-list> 
+
+
+ 
+ <br><Br>
+
+ 
+  <label class="item ">
+    <i class="icon ion-android-star ion-flag"></i>
+     Ferramentas  
+      </label>
+      <div class="row">
+   
+  <div class="col">
+  <a ng-href="#/tab/servicos/anuncie">
+   <img src="img/banners/banner-interno-anuncie.png" width="85%">
+   </a>
+  </div>
+  <div class="col">
+    <a href="#/tab/servicos/cadastro">
+   <img src="img/banners/banner-interno-seunome.png" width="85%">
+   </a>
+  </div>
+  <div class="col">
+   <a href="#/tab/servicos/sugestoes">
+   <img src="img/banners/banner-interno-envienos.png" width="85%">
+   </a>
+  </div>
+  </div>
+  
+ 
+ <div ng-show="rodape" >
+   <button class="button button-small icon-left ion-nuclear button-full button-positive" style="margin-top: -5px;" ng-click="limpapesquisa(); expres = '';">
+    LIMPAR PESQUISA
+  </button> 
+</div>
+
+ 
+  </ion-content>
+</ion-view>  
+

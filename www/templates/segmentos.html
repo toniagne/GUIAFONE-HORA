@@ -1,0 +1,53 @@
+ 
+     
+
+
+<ion-view>
+  <ion-nav-title>
+      <img src="img/logo.png" height="100%" >  
+  </ion-nav-title>
+
+  <ion-content delegate-handle="mainScroll">
+   <div class="card">
+      <div class="item item-divider">
+        PESQUISA POR SEGMENTOS
+      </div>
+    </div>
+  
+
+      <div class="item-input-inset">
+      <label class="item-input-wrapper" >
+        <input type="text" placeholder="DIGITE SUA PESQUISA" ng-model="expres" style="height: 50px;">
+      </label> 
+    </div>
+
+
+<ion-list>
+      <ion-item 
+              class="item-icon-right item-text-wrap" 
+              ng-repeat="segmento in segmentos | filter:expres | limitTo: 15"  
+              type="item-text-wrap" 
+              href="#/tab/segmentos/{{segmento.id}}"> 
+         
+        <h2>{{segmento.strNome}}</h2> 
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+</ion-list>
+
+ <div ng-if="erroi === '2'">
+    <div class="tela-erro" ng-show="(nomes | filter:pesquisa).length == 0">  
+      <!--  <span ng-init="abreaviso('Não foi encontrado nenhum item com esta expressão.')"></span> -->
+    </div>
+ </div>
+
+  </ion-content>
+</ion-view>
+
+<!--
+ <div class="bar bar-footer" style="height:70px;">
+    
+      <div class="item item-image">
+        <img src="img/banners/space.png">
+      </div> 
+</div>
+-->

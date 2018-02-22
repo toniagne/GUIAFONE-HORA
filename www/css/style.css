@@ -1,0 +1,31 @@
+/* Empty. Add your own CSS if you like */
+.item-animate.ng-hide {
+  height:0;
+  opacity:0;
+  padding:0;
+}
+
+.item-animate.ng-hide-remove,
+.item-animate.ng-hide-add {
+  display: block !important;
+  transition: all linear 300ms;
+}
+
+.splash {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%; 
+    background: #000;
+    z-index: 9999999999;
+}
+.fixed-outside{
+  position: absolute;
+  bottom: 5px;   
+  color:white;
+  width: 100%;
+  height:  120px;
+  text-align:center;
+}
